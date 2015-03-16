@@ -91,13 +91,13 @@ https://github.com/gorhill/Javascript-Voronoi
             var countInput = inputs.addRangeCommandIntegerInput('count','# Cells','cm',8,256);
             countInput.valueOne = 16;
 
-            var widthInput = inputs.addRangeCommandFloatInput('width','Area Width','cm','1','100');
+            var widthInput = inputs.addRangeCommandIntegerInput('width','Area Width','cm','1','100');
             widthInput.valueOne = 15;
 
-            var heightInput = inputs.addRangeCommandFloatInput('height','Area Height','cm','1','100');
+            var heightInput = inputs.addRangeCommandIntegerInput('height','Area Height','cm','1','100');
             heightInput.valueOne = 15;
 
-            var scaleInput = inputs.addRangeCommandFloatInput('scale','% Scale Cell','cm','10','100');
+            var scaleInput = inputs.addRangeCommandIntegerInput('scale','% Scale Cell','cm','10','100');
             scaleInput.valueOne = 80;
         }
         catch (e) {
@@ -121,10 +121,10 @@ https://github.com/gorhill/Javascript-Voronoi
             for (var n = 0; n < inputs.count; n++) {
                 var input = inputs.item(n);
                 if (input.id === 'width') {
-                    widthInput = adsk.core.RangeCommandFloatInput(input);
+                    widthInput = adsk.core.RangeCommandIntegerInput(input);
                 }
                 else if (input.id === 'height') {
-                    heightInput = adsk.core.RangeCommandFloatInput(input);
+                    heightInput = adsk.core.RangeCommandIntegerInput(input);
                 }
                 else if (input.id === 'count') {
                     countInput = adsk.core.RangeCommandIntegerInput(input);
@@ -133,7 +133,7 @@ https://github.com/gorhill/Javascript-Voronoi
                     edgeStyleInput = adsk.core.DropDownCommandInput(input);
                 }
                 else if (input.id === 'scale') {
-                    scaleInput = adsk.core.RangeCommandFloatInput(input);
+                    scaleInput = adsk.core.RangeCommandIntegerInput(input);
                 }
             }
 
